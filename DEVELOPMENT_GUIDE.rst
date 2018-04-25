@@ -10,6 +10,8 @@ and send a Pull Request.
 Environment Setup
 -----------------
 
+.. note:: You need to have `pyenv`_ installed, please see the `installation instructions`_ for more information.
+
 ``make setup`` will perform the following steps for you. You can either run ``make setup`` command or perform the
 steps manually.
 
@@ -41,7 +43,7 @@ a different virtualenv for each project. `pyenv`_ comes with a handy plugin that
 ~~~~~~~~~~~~~~~~~~~~~~~
 Install dependencies by running the following command. Make sure the Virtualenv you created above is active.
 
-``pip install -r requirements.txt -r requirements-dev.txt``
+``pip install -r requirements/base.txt -r requirements/dev.txt``
 
 
 Running Tests
@@ -52,6 +54,8 @@ Unit tests
 
 ``make test`` command will run all unit tests. This command is configured to fail when code coverage for package
 drops below 95%.
+
+``pytest -k "TestMyClass"`` command will run all unit tests within the `TestMyClass` class.
 
 Pull Requests
 -------------
@@ -67,3 +71,4 @@ Tests are also a documentation of the success and failure cases, which is crucia
 .. _excellent cheatsheet: http://python-future.org/compatible_idioms.html
 .. _pyenv: https://github.com/pyenv/pyenv
 .. _tox: http://tox.readthedocs.io/en/latest/
+.. _installation instructions: https://github.com/pyenv/pyenv#installation
